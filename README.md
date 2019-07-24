@@ -16,4 +16,4 @@
 * Create folder /usr/local/nodejs
 * Move all files and directories in extracted folder to /usr/local/nodejs
 * Add below line to the end of ~/.profile:
-  export PATH=$PATH:/usr/local/nodejs/bin
+...export PATH=$PATH:/usr/local/nodejs/bin
