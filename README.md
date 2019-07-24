@@ -10,10 +10,10 @@
 
 ## Installation
 1. Install NodeJS and NPM:
-..* Access https://nodejs.org/en/
-..* Download the LTS version
-..* Extract tar file
-..* Create folder /usr/local/nodejs
-..* Move all files and directories in extracted folder to /usr/local/nodejs
-..* Add below line to the end of ~/.profile:
-... export PATH=$PATH:/usr/local/nodejs/bin
+* Access https://nodejs.org/en/
+* Download the LTS version
+* Extract tar file
+* Create folder /usr/local/nodejs
+* Move all files and directories in extracted folder to /usr/local/nodejs
+* Add below line to the end of ~/.profile:
+  export PATH=$PATH:/usr/local/nodejs/bin
