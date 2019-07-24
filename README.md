@@ -9,4 +9,11 @@
 - Unidirectional data flow and Flux − React implements one-way data flow which makes it easy to reason about your app. Flux is a pattern that helps keeping your data unidirectional.
 
 ## Installation
-- Install NodeJS and NPM: 
+1. Install NodeJS and NPM:
+..* Access https://nodejs.org/en/
+..* Download the LTS version
+..* Extract tar file
+..* Create folder /usr/local/nodejs
+..* Move all files and directories in extracted folder to /usr/local/nodejs
+..* Add below line to the end of ~/.profile:
+... export PATH=$PATH:/usr/local/nodejs/bin
