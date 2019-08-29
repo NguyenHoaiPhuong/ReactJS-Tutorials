@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
 import './App.css'
+import Card from './Card';
 
 class App extends Component {
     render() {
         return (
             <div className="App">                
-                <div className="card" style={{width: '18rem'}}>
-                    <div className="card-header">
-                        Panel title
+                <div className="row">
+                    <div className="col-sm-4">
+                        <Card />                
                     </div>
-                    <div className="card-body">
-                        <p className="card-text">Panel Content</p>                        
+                    <div className="col-sm-4">
+                        <Card />                
+                    </div>
+                    <div className="col-sm-4">
+                        <Card />                
                     </div>
                 </div>
             </div>
