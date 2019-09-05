@@ -6,7 +6,7 @@ export default function() {
             last: "Hoai Phuong",
             age: 34,
             description: "Nguyen Hoai Phuong is a developer",
-            thumbnail: ""
+            thumbnail: "../../images/Akagi.jpg"
         },
         {
             id: 2,
