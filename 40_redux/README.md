@@ -22,3 +22,24 @@ npm install --save-dev redux-devtools
 ## Action Creators
 - Action creators are exactly that—functions that create actions. It's easy to conflate the terms “action” and “action creator”, so do your best to use the proper term.
 
+## Reducer
+- Reducers specify how the application's state changes in response to actions sent to the store. Remember that actions only describe what happened, but don't describe how the application's state changes.
+
+### Designing the State Shape
+- In Redux, all the application state is stored as a single object. It's a good idea to think of its shape before writing any code. What's the minimal representation of your app's state as an object?
+
+- You'll often find that you need to store some data, as well as some UI state, in the state tree. This is fine, but try to keep the data separate from the UI state.
+
+### Handling Actions
+- The reducer is a pure function that takes the previous state and an action, and returns the next state.
+
+```
+(previousState, action) => newState
+```
+
+- It's very important that the reducer stays pure. Things you should never do inside a reducer:
+* Mutate its arguments;
+* Perform side effects like API calls and routing transitions;
+* Call non-pure functions, e.g. Date.now() or Math.random().
+
+- Given the same arguments, it should calculate the next state and return it. No surprises. No side effects. No API calls. No mutations. Just a calculation.
