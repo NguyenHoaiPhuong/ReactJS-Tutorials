@@ -1,7 +1,13 @@
 # Installation
-* To install the stable version:
+
+To install the stable version of redux:
 ```
 npm install redux
+```
+
+Followings are dependencies used in this tutorial:
+```
+yarn add prop-types
 ```
 
 # Complementary Packages
