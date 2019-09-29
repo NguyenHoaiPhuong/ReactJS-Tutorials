@@ -1,27 +1,40 @@
+import { VisibilityFilter } from '../data/visibilityFilter'
+
 /* Action types */
-export namespace ActionTypes {
-    export const ADD_TODO: string = 'ADD_TODO'
-    export const TOGGLE_TODO: string = 'TOGGLE_TODO'
-    export const SET_VISIBILITY_FILTER: string = 'SET_VISIBILITY_FILTER'
-}
+export type ActionType = string;
+export const ADD_TODO: ActionType = 'ADD_TODO';
+export const TOGGLE_TODO: ActionType = 'TOGGLE_TODO';
+export const SET_VISIBILITY_FILTER: ActionType = 'SET_VISIBILITY_FILTER';
 
-/* other constants */
-export namespace VisibilityFilters {
-    export const SHOW_ALL: string = 'SHOW_ALL'
-    export const SHOW_COMPLETED = 'SHOW_COMPLETED'
-    export const SHOW_ACTIVE = 'SHOW_ACTIVE'
-}
+/* Action payload */
+export type ActionPayload = string | number;
 
+export type Action = {
+    type: ActionType,
+    payload: ActionPayload
+}
 
 /* action creators */
 export function addTodo(text: string) {
-    return { type: ActionTypes.ADD_TODO, text }
-  }
-  
-export function toggleTodo(index: number) {
-    return { type: ActionTypes.TOGGLE_TODO, index }
+    let action: Action = {
+        type: ADD_TODO,
+        payload: text
+    }
+    return action
 }
   
-export function setVisibilityFilter(filter: string) {
-    return { type: ActionTypes.SET_VISIBILITY_FILTER, filter }
+export function toggleTodo(index: number) {
+    let action: Action = {
+        type: TOGGLE_TODO,
+        payload: index
+    }
+    return action
+}
+  
+export function setVisibilityFilter(filter: VisibilityFilter) {
+    let action: Action = {
+        type: SET_VISIBILITY_FILTER,
+        payload: filter
+    }
+    return action
 }
