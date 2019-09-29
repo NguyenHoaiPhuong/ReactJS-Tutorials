@@ -43,3 +43,36 @@ npm install --save-dev redux-devtools
 * Call non-pure functions, e.g. Date.now() or Math.random().
 
 - Given the same arguments, it should calculate the next state and return it. No surprises. No side effects. No API calls. No mutations. Just a calculation.
+
+### Redux combineReducers
+- All combineReducers() does is to generate a function that calls your reducers with the slices of state selected according to their keys, and combines their results into a single object again. It's not magic. And like other reducers, combineReducers() does not create a new object if all of the reducers provided to it do not change state
+
+```
+const reducer = combineReducers({
+  a: doSomethingWithA,
+  b: processB,
+  c: c
+})
+```
+
+```
+function reducer(state = {}, action) {
+  return {
+    a: doSomethingWithA(state.a, action),
+    b: processB(state.b, action),
+    c: c(state.c, action)
+  }
+}
+```
+
+## Store
+
+The Store is the object that brings actions and reducers together. The store has the following responsibilities:
+
+* Holds application state
+* Allows access to state via ```getState()```
+* Allows state to be updated via dispatch(action)
+* Registers listeners via subscribe(listener)
+* Handles unregistering of listeners via the function returned by subscribe(listener)
+
+It's important to note that you'll only have a single store in a Redux application. When you want to split your data handling logic, you'll use reducer composition instead of many stores.
