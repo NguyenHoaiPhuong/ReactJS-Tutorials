@@ -1,5 +1,3 @@
-import { AppState, initState } from "../data/state";
-import { Action } from "../actions/actions";
 import { visibilityFilterReducer } from "./visibilityFilterReducer";
 import { todosReducer } from "./todosReducer";
 import { combineReducers } from 'redux'

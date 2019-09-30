@@ -1,4 +1,3 @@
-import { initState, AppState } from "../data/state";
 import { Action, ADD_TODO, TOGGLE_TODO } from '../actions/actions'
 import { TODO } from "../data/todo";
 
@@ -6,14 +5,14 @@ export function todosReducer(prevState = Array<TODO>(0), action: Action): Array<
     switch (action.type) {
         case ADD_TODO:
             let todo: TODO = {
-                text: <string>action.payload,
+                text: action.payload as string,
                 completed: false
             }
             let nextState = prevState
             nextState.push(todo)
             return nextState
         case TOGGLE_TODO:
-            let idx = <number>action.payload
+            let idx = action.payload as number
             let todos: Array<TODO> = prevState.map(function(value, index, array) {
                 if (index === idx) {
                     return (

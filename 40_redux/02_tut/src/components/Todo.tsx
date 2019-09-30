@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 // import PropTypes from 'prop-types'
 import { TODO } from '../data/todo'
+import { Action } from '../actions/actions'
 
-type TodoProps = {
-    onClick: () => void,
+type Props = {
+    onClick: () => Action,
     todo: TODO
 }
 
-type TodoState = {}
+type States = {}
 
-class Todo extends Component<TodoProps, TodoState> {
+class Todo extends Component<Props, States> {
     render() {
         let {onClick, todo} = this.props
         return (
