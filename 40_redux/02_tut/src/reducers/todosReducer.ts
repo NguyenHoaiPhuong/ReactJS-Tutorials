@@ -5,6 +5,7 @@ export function todosReducer(prevState = Array<TODO>(0), action: Action): Array<
     switch (action.type) {
         case ADD_TODO:
             let todo: TODO = {
+                id: prevState.length,
                 text: action.payload as string,
                 completed: false
             }
@@ -13,7 +14,7 @@ export function todosReducer(prevState = Array<TODO>(0), action: Action): Array<
         case TOGGLE_TODO:
             let idx = action.payload as number
             let todos: Array<TODO> = prevState.map(function(value, index, array) {
-                if (index === idx) {
+                if (value.id === idx) {
                     return (
                         Object.assign({}, value, {completed: !value.completed})
                     )

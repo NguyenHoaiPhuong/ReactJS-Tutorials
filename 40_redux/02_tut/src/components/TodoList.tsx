@@ -25,7 +25,7 @@ class TodoList extends Component<Props, States> {
         let {todos, toggleTodo}  = this.props
         const Todos = todos.map(function(value, index, array) {
             return (
-                <Todo key={index} todo={value} onClick={() => toggleTodo(index)} />
+                <Todo key={value.id} todo={value} onClick={() => toggleTodo(value.id)} />
             )
         })
 
