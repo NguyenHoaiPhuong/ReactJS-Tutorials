@@ -4,11 +4,20 @@ To install the stable version of redux:
 ```
 npm install redux
 ```
+```
+npm install react-redux
+```
 
 Followings are dependencies used in this tutorial:
+
 ```
 yarn add prop-types
 ```
+
+```
+npm install --save-dev @types/react-redux
+```
+
 
 # Complementary Packages
 * Most likely, you'll also need the React bindings and the developer tools.
