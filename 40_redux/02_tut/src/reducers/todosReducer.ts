@@ -8,8 +8,7 @@ export function todosReducer(prevState = Array<TODO>(0), action: Action): Array<
                 text: action.payload as string,
                 completed: false
             }
-            let nextState = prevState
-            nextState.push(todo)
+            let nextState = [...prevState, todo]
             return nextState
         case TOGGLE_TODO:
             let idx = action.payload as number

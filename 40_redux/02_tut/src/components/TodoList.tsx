@@ -23,13 +23,14 @@ class TodoList extends Component<Props, States> {
     
     render() {
         let {todos, toggleTodo}  = this.props
-        const Todos = todos.map((value, index) => {
-            return <Todo key={index} todo={value} onClick={() => toggleTodo(index)} />
+        const Todos = todos.map(function(value, index, array) {
+            return (
+                <Todo key={index} todo={value} onClick={() => toggleTodo(index)} />
+            )
         })
 
         return(
             <ul>
-                <Todo key={-1} todo={{text: "golang", completed: false}} onClick={() => toggleTodo(-1)} />
                 {Todos}
             </ul>
         )
