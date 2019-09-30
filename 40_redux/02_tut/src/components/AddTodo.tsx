@@ -28,12 +28,13 @@ class AddTodo extends Component<Props, States> {
     handleSubmit(e: FormEvent) {
         e.preventDefault()
         this.props.addTodo(this.state.todoText)
+        this.setState({todoText: ""})
     }    
 
     render() {
         return(
             <form onSubmit={this.handleSubmit}>
-                <input onChange={this.handleInputChange}/>
+                <input value={this.state.todoText} onChange={this.handleInputChange}/>
                 <button type="submit">
                     Add Todo
                 </button>
